@@ -1,0 +1,26 @@
+.subhead-banner {
+    margin-bottom: 1.3em;
+}
+
+.subhead-banner .sub-title {
+    font-size: 1.2em;
+    line-height: 1;
+    color: #000000;
+    font-family: 'Nexa-Light';
+    word-spacing: 0.2em;
+    margin-bottom: 1.8em;
+    position: relative;
+    z-index: 1000;
+}
+
+.animation-slide .slideWrap{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    opacity: 0;
+}
+
+.animation-slide .slideWrap div{
+    opacity: 0;
+}

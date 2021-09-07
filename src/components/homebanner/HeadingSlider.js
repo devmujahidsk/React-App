@@ -1,55 +1,163 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { gsap, Power0, Expo } from "gsap";
+import Blob from "../blob/blob";
+import SubheadingSlider from "./SubheadingSlider";
 import "./heading.css";
 export default function HeadingSlider() {
+    useEffect(() => {
+        gsap.to(".head-slide-1, .head-slide-2, .head-slide-3, .head-slide-4", { opacity: 1});
+        gsap.from(
+            `.animation-slide-head`,
+            1,
+            { y: 80, opacity: 0 },
+            { y: 0, opacity: 1, ease: Power0.easeInOut }
+        );
+
+        const tl = new gsap.timeline({ paused: true, repeat: -1 });
+        const subtitleTimeline = new gsap.timeline();
+        subtitleTimeline
+      .fromTo(
+        ".head-slide-1 div",
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+
+          duration: 2.5,
+          stagger: { amount: 0.5 },
+          ease: Expo.easeOut
+        },
+        "+=1.5"
+      )
+      .to(
+        ".head-slide-1 div",
+        {
+          opacity: 0,
+          y: 50,
+
+          duration: 1.2,
+          stagger: { amount: 0.25 },
+          ease: Expo.easeIn
+        },
+        "+=1"
+      )
+
+      .fromTo(
+        ".head-slide-2 div",
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+
+          duration: 2.5,
+          stagger: { amount: 0.5 },
+          ease: Expo.easeOut
+        },
+        "+=1.5"
+      )
+
+      .to(
+        ".head-slide-2 div",
+        {
+          opacity: 0,
+          y: 50,
+
+          duration: 1.2,
+          stagger: { amount: 0.25 },
+          ease: Expo.easeIn
+        },
+        "+=1"
+      )
+
+      .fromTo(
+        ".head-slide-3 div",
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+
+          duration: 2.5,
+          stagger: { amount: 0.5 },
+          ease: Expo.easeOut
+        },
+        "+=1.5"
+      )
+
+      .to(
+        ".head-slide-3 div",
+        {
+          opacity: 0,
+          y: 50,
+          duration: 1.2,
+          stagger: { amount: 0.25 },
+          ease: Expo.easeIn
+        },
+        "+=1"
+      )
+
+      .fromTo(
+        ".head-slide-4 div",
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 2.5,
+          stagger: { amount: 0.5 },
+          ease: Expo.easeOut
+        },
+        "+=1.5"
+      )
+
+      .to(
+        ".head-slide-4 div",
+        {
+          opacity: 0,
+          y: 50,
+          duration: 1.2,
+          stagger: { amount: 0.25 },
+          ease: Expo.easeIn
+        },
+        "+=1"
+      ) 
+
+    tl.add(subtitleTimeline);
+
+    // delay start of slider for 2 seconds
+    gsap.delayedCall(
+        1,
+        function(tl) {
+          tl.restart(true, false);
+        },
+        [tl]
+      );
+
+    const blob = new gsap.timeline();
+    blob.fromTo(
+      ".blob-outer",
+      5,
+      { opacity: 0, x: 0 },
+      { opacity: 1, x: 0, ease: Power0.inOut },
+      "+=4"
+    );
+    });
     return(
         <div className="head-banner">
-            <div className="title">
+            <Blob />
+            <SubheadingSlider />
+            <div className="head-title"> 
                 <div className="animation-slide-head">
                     <h1>
                         <div className="slide-wrap head-slide-1">
-                            <div>to&nbsp;</div>
-                            <div>create&nbsp;</div>
-                            <div>is&nbsp;</div>
-                            <br />
-                            <div>to&nbsp;</div>
-                            <div>unite</div>
+                            <div>Human Centric</div>
                         </div>
                         <div className="slide-wrap head-slide-2">
-                            <div>we&nbsp;</div>
-                            <div>specialise&nbsp;</div>
-                            <div>in&nbsp;</div>
-                            <div>product&nbsp;</div>
-                            <div>&&nbsp;</div>
-                            <br />
-                            <div>packaging&nbsp;</div>
-                            <div>design</div>
+                            <div>Expert</div>
                         </div>
                         <div className="slide-wrap head-slide-3">
-                            <div>Our&nbsp;</div>
-                            <div>approach:&nbsp;</div>
-                            <br />
-                            <div>
-                            audit &nbsp;<span>></span>&nbsp;
-                            </div>
-                            <div>
-                            research &nbsp;<span>></span>&nbsp;
-                            </div>
-                            <div>execute</div>
+                            <div>Proficient</div>
                         </div>
                         <div className="slide-wrap head-slide-4">
-                            <div>Branding&nbsp;</div>
-                            <div>and&nbsp;</div>
-                            <div>digital&nbsp;</div>
-                            <br />
-                            <div>content&nbsp;</div>
-                            <div>is&nbsp;</div>
-                            <div>our&nbsp;</div>
-                            <div>forte&nbsp;</div>
-                        </div>
-                        <div className="slide-wrap head-slide-5">
-                            <div>Now&nbsp;</div>
-                            <div>is&nbsp;</div>
-                            <div>everything&nbsp;</div>
+                            <div>Ingenious</div>
                         </div>
                     </h1>
                 </div>

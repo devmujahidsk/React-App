@@ -3,13 +3,18 @@
     width: 50vh;
 }
 
+.thin-line-blob-wrapper img{
+  max-width: 100%;
+  opacity: 0;
+}
+
 .blob-outer{
     height: 300px;
     width: 300px;
     position: absolute;
-    right: 9em;
-    top: 13em;
-    opacity: 1;
+    right: 13em;
+    top: 10em;
+    opacity: 0;
 }
 
 .blob-wrapper {
