@@ -20,6 +20,7 @@
     position: absolute;
     width: 100%;
     text-align: center;
+    top: 0.5em;
     left: 0;
     opacity: 0;
 }
