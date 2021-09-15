@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { gsap, Power0, Expo } from "gsap";
 import Blob from "../blob/blob";
 import SubheadingSlider from "./SubheadingSlider";
+import Pointimg from "../../images/ut-dot-dark-1.svg";
 import "./heading.css";
 export default function HeadingSlider() {
     useEffect(() => {
@@ -139,9 +140,24 @@ export default function HeadingSlider() {
       { opacity: 1, x: 0, ease: Power0.inOut },
       "+=4"
     );
+
+    const bannerbg = new gsap.timeline();
+    bannerbg.fromTo(
+      ".banner-bg img",
+      5,
+      { opacity: 0, x: 0 },
+      { opacity: 1, x: 50, ease: Power0.inOut },
+      "+=6"
+    );
+
     });
+
+    
     return(
         <div className="head-banner">
+          <div className="banner-bg">
+            <img src={Pointimg} alt="bg" />
+          </div>
             <Blob />
             <SubheadingSlider />
             <div className="head-title"> 

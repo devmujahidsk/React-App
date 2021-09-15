@@ -1,0 +1,40 @@
+.container-wrap{
+    text-align: center;
+}
+.container-wrap .redux-title{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.7em;
+    color: turquoise;
+    letter-spacing: .2em;
+    margin-bottom: 1em;
+}
+
+.container-wrap .redux-subtitle {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5em;
+    color: violet;
+    letter-spacing: .2em;
+    margin-bottom: 2em;
+}
+
+.quantity button.click-btn{
+    border: 3px solid #ccc;
+    padding: 15px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 2em;
+}
+
+.quantity button.click-btn:hover{
+    background-color: #c8c8c8;
+    transition: .5s ease-in;
+}
+
+.quantity .quantity_input{
+    border: 3px solid #ccc;
+    padding: 15px 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    font-size: 2em;
+}

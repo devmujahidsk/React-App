@@ -2,6 +2,15 @@
     text-align: center;
 }
 
+.banner-bg img {
+    width: 400px;
+    height: 500px;
+    position: absolute;
+    top: 5em;
+    left: 0em;
+    opacity: 0;
+}
+
 .head-title{
     font-size: 4.8em;
     text-align: center;
